@@ -1,0 +1,18 @@
+CREATE USER 'niradmin'@'localhost' IDENTIFIED BY 'ramona2@';
+GRANT ALL PRIVILEGES ON * . * TO 'niradmin'@'localhost';
+FLUSH PRIVILEGES;
+CREATE DATABASE IF NOT EXISTS companies;
+GRANT ALL PRIVILEGES ON companies . * TO 'niradmin'@'localhost';
+
+USE companies;
+CREATE TABLE company (
+id VARCHAR(36)  PRIMARY KEY,
+denumire VARCHAR(500) NOT NULL,
+cui VARCHAR(255) NOT NULL,
+registru VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+ALTER TABLE `company` ADD UNIQUE(`cui`);
+
+SELECT * FROM company;
