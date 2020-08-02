@@ -46,6 +46,7 @@ if (mysqli_query($concompany, $sql)) {
   echo "insert was successful";
 } else {
   echo "error : " . mysqli_error($concompany);
+  http_response_code(409);
 }
 }}
    else 

@@ -1,0 +1,5 @@
+Reports:
+  * companies without any user
+  * users without any company
+  * link in uc_link with invalid company (deleted or disabled)
+  * link in uc_link with invalid user (deleted or disabled)
