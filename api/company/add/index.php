@@ -7,6 +7,8 @@
 
 //  cui este obligatoriu, ceilalti paramatrii fiind optionali
 
+//  companiile de test intra cu statusul 0, toate celelalte intra in status 1, apoi validate in status 2, inactive in status 3
+
 include_once("../../../util/index.php");
 
 $id = guid();
@@ -28,9 +30,17 @@ if (isset($_POST['cui']))
 
 
   
+if (isset($_POST['status']))
+ { if (!empty($_POST['status']))
+   $status = $_POST['status']== 'test' ? '0' : '1'; }
+   else 
+	  $status = '1';
+
+
+
   
 
-$sql = "INSERT INTO company (id,denumire,cui,registru) VALUES ('$id','$denumire','$cui','$registru')";
+$sql = "INSERT INTO company (id,denumire,cui,registru,status) VALUES ('$id','$denumire','$cui','$registru','$status')";
 
 if (mysqli_query($concompany, $sql)) {
   echo "insert was successful";
