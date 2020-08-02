@@ -33,7 +33,7 @@ if (isset($_POST['user']))
    $sql = "INSERT INTO users (id,username,passwd,telefon) VALUES ('$id','$user','$passwd','$tel')";
 
 if (mysqli_query($concompany, $sql)) {
-  echo "insert was successful";
+  echo "{id:".$id."}";
 } else {
   echo "error : " . mysqli_error($concompany);
   http_response_code(409);

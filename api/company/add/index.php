@@ -43,7 +43,7 @@ if (isset($_POST['status']))
 $sql = "INSERT INTO company (id,denumire,cui,registru,status) VALUES ('$id','$denumire','$cui','$registru','$status')";
 
 if (mysqli_query($concompany, $sql)) {
-  echo "insert was successful";
+  echo "{id:".$id."}";
 } else {
   echo "error : " . mysqli_error($concompany);
   http_response_code(409);
