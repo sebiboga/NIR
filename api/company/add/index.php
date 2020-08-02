@@ -1,10 +1,32 @@
 <?php
+
+// POST parameters:
+//  companie - denumire companie
+//  cui   - cod fiscal ; contine RO daca este platitor de TVA
+//  registru - numar de inregistrare in registrul comertului
+
+
+
 include_once("../../../util/index.php");
 
 $id = guid();
-$denumire = 'INFOPOWER';
-$cui = 'RO21953930';
-$registru = 'J05/1574/2007';
+
+
+
+if (isset($_POST('companie')))
+  if (!empty($_POST('companie')))
+	  $denumire = $_POST('companie');
+
+
+
+if (isset($_POST('cui')))
+  if (!empty($_POST('cui')))
+	  $cui = $_POST('cui');
+
+
+if (isset($_POST('registru')))
+  if (!empty($_POST('registru')))
+	  $registru = $_POST('registru');
 
 $sql = "INSERT INTO company (id,denumire,cui,registru) VALUES ('$id','$denumire','$cui','$registru')";
 
