@@ -26,7 +26,7 @@ $sql = "SELECT id FROM company WHERE cui = '$cui' ";
 if ($result = mysqli_query($concompany, $sql)) {
 	$row = mysqli_fetch_assoc($result);
     $id  = $row["id"];
-  echo "{id:".$id."}";
+  echo '{"id":'.$id.'}';
 } else {
   echo "error : " . mysqli_error($concompany);
   http_response_code(404);
