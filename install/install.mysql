@@ -48,3 +48,28 @@ CREATE TABLE IF NOT EXISTS `hq` (
   `fax` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `pcl` (
+  `id` varchar(36) NOT NULL,
+  `idcompany` varchar(36) NOT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `fax` varchar(25) DEFAULT NULL,
+  `mobile` varchar(25) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `gestiuni` (
+  `id` varchar(36) NOT NULL,
+  `idpcl` varchar(36) NOT NULL,
+  `CAEN` varchar(25) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `admin` varchar(500) DEFAULT NULL,
+  `hours` varchar(255) DEFAULT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `fax` varchar(25) DEFAULT NULL,
+  `mobile` varchar(25) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
