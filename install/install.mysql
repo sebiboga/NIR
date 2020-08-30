@@ -37,3 +37,14 @@ reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ALTER TABLE `users` ADD UNIQUE(`username`);
 
 SELECT * FROM company;
+CREATE TABLE IF NOT EXISTS `hq` (
+  `id` varchar(36) NOT NULL,
+  `idcompany` varchar(36) NOT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `mobile` varchar(25) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `admin` varchar(300) DEFAULT NULL,
+  `fax` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
