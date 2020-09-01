@@ -26,6 +26,7 @@ $sql = "SELECT registru FROM company WHERE cui = '$cui' ";
 if ($result = mysqli_query($concompany, $sql)) {
 	$row = mysqli_fetch_assoc($result);
     $j  = $row["registru"];
+	if ($j==''  ) {http_response_code(404);}
   echo '{"registru":"'.$j.'"}';
 } else {
   echo "error : " . mysqli_error($concompany);
