@@ -46,9 +46,9 @@ if (mysqli_query($concompany, $sql)) {
   echo '{"id":"'.$id.'"}';
 } else {
   echo "error : " . mysqli_error($concompany);
-  http_response_code(200);
+  http_response_code(406);
 }
 }}
    else 
-   { http_response_code(200); echo 'cui este obligatoriu';}
+   { http_response_code(406); echo 'cui este obligatoriu';}
 ?>
