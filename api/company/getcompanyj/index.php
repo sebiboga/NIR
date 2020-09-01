@@ -33,5 +33,5 @@ if ($result = mysqli_query($concompany, $sql)) {
 }
 }}
    else 
-   { http_response_code(200); echo 'not found';}
+   { http_response_code(404); echo 'not found';}
 ?>
