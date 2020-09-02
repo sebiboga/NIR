@@ -46,7 +46,7 @@ if (mysqli_query($concompany, $sql)) {
   echo '{"id":"'.$id.'"}';
 } else {
   echo "error : " . mysqli_error($concompany);
-  http_response_code(406);
+  http_response_code(409);
 }
 }}
    else 
