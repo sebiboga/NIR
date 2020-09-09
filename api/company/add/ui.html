@@ -3,21 +3,46 @@
 <head>
 <link rel="stylesheet" href="main.css">
 
+  <style>
+    .column {
+       float: left;
+       width: 50%;
+            }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  </style>
+
 </head>
 <body>
+
+<div class="row">
+  <div class="column">
 <p>
 NIR
 <br>
 o platforma open source
 <p>
-Incearca platforma
-</p>
+Incearca platforma  
+  
+  </div>
+  <div class="column">
+   </p>
 <form action="index.php" method="post">
 <input type="text" name="cui" placeholder="Cod fiscal"><br>
 <input type="text" name="companie" placeholder="Nume firma"><br>
 <input type="text" name="registru" placeholder="Registru J00/0000/0000"><br>
 <input type="submit" class="albastru">
 </form>
+
+  
+  </div>
+</div>
+
 
 </body>
 </html>
