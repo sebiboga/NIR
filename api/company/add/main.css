@@ -8,3 +8,20 @@
     border: 0;
     padding: 10px 30px;
  }
+ 
+ .blue {
+	background-color:#53A0DB;
+	}
+  
+    .column {
+	 
+       float: left;
+       width: 50%;
+            }
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
