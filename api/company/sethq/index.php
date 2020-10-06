@@ -58,15 +58,18 @@ if (isset($_POST['admin']))
   
 
 $sql = "INSERT INTO hq (id,idcompany,address,phone,fax,mobile,email,admin) VALUES ('$id','$idcompanie','$address','$phone','$fax','$mobile','$email','$admin')";
-
+ $results= new stdClass();
 if (mysqli_query($concompany, $sql)) {
-  echo '{"id":"'.$id.'"}';
+ 
+  $results->id=$id;
+
+  
 } else {
-  echo "error : " . mysqli_error($concompany);
+  $results-> error = mysqli_error($concompany);
   http_response_code(409);
 }
   }
   else 
 	  http_response_code(409);
-
+ echo json_encode($results);
 ?>

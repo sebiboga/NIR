@@ -26,7 +26,11 @@ $sql = "SELECT denumire FROM company WHERE cui = '$cui' ";
 if ($result = mysqli_query($concompany, $sql)) {
 	$row = mysqli_fetch_assoc($result);
     $name  = $row["denumire"];
-  echo '{"companie":"'.$name.'"}';
+
+  $results=new stdClass();
+  $results-> companie=$name;
+  echo json_encode($results);
+  
 } else {
   echo "error : " . mysqli_error($concompany);
   http_response_code(404);
