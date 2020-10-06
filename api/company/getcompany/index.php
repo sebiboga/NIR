@@ -27,8 +27,15 @@ if ($result = mysqli_query($concompany, $sql)) {
 	$row = mysqli_fetch_assoc($result);
     $name  = $row["denumire"];
 	$cui = $row["cui"];
-  echo '{"companie":"'.$name.'",
-  "cui":"'.$cui.'"}';
+	
+	$results = new stdClass();
+	$results -> companie = $name;
+	$results -> cui      = $cui;
+	
+	
+  echo json_encode($results);
+  
+  
 } else {
   echo "error : " . mysqli_error($concompany);
   http_response_code(404);
